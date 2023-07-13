@@ -11,7 +11,7 @@ def get_connection():
 def select_all_books():
     connection = get_connection()
     cursor = connection.cursor()
-    SQL = "SELECT title, author, publisher, pages FROM books_sample"
+    SQL = "SELECT isbn, title, author, publisher, pages FROM book_management"
 
     cursor.execute(SQL)
     rows = cursor.fetchall()
@@ -21,12 +21,12 @@ def select_all_books():
     return rows
 
 
-def insert_book(title, author, publisher, pages):
+def insert_book(isbn, title, author, publisher, pages):
 
     connection = get_connection()
     cursor = connection.cursor()
-    sql = 'INSERT INTO books_sample VALUES (default, %s, %s, %s, %s)'
-    cursor.execute(sql, (title, author, publisher, pages))
+    sql = 'INSERT INTO book_management VALUES (default, %s,%s, %s, %s, %s)'
+    cursor.execute(sql, (isbn, title, author, publisher, pages))
     connection.commit()
     cursor.close()
     connection.close()
