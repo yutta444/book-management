@@ -13,26 +13,28 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-danger">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{{url_for('sample_top')}}">図書管理システム</a>
+        <a class="navbar-brand" href="{{url_for('mypage')}}">図書管理システム</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="{{url_for('sample_list')}}">一覧</a>
-            <a class="nav-link" href="{{url_for('sample_register')}}">図書登録</a>
-            <a class="nav-link" href="{{url_for('sample_register')}}">ログイン・登録</a>
+            <a class="nav-link" href="{{url_for('list_exe')}}">一覧</a>
+            <a class="nav-link" href="{{url_for('book_register')}}">図書登録</a>
+            <a class="nav-link" href="{{url_for('logout')}}">ログアウト</a>
           </div>
         </div>
       </div>
     </nav>
   </header>
-
+ 
+  <p>{{ session['username'] }}でログイン中</p>
+  
   {% block content %}
-  <!-- ここにメインコンテンツを埋め込む -->
+
   {% endblock %}
 
-  <footer class="footer bg-light fixed-bottom">
-    <div class="container">
+  <footer>
       <p class="text-muted text-center">© 2023 My Book App</p>
     </div>
   </footer>
+
 </body>
 </html>

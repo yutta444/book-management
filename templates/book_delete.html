@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}
+    図書削除
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+                <form action="{{ url_for('book_delete_exe') }}" method="post">
+                <h1>タイトル：</h1><input type="hidden" name="id" value={{ id }}></label><br>
+            <button type="submit" >削除</button>
+</div>
+{% endblock %}

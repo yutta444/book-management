@@ -1,0 +1,35 @@
+/* Add this CSS to your existing styles */
+html, body {
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1 0 auto;
+  }
+  
+  .footer {
+    flex-shrink: 0;
+  }
+  
+  /* Add the following CSS if necessary to make the footer look good */
+  .footer {
+    padding: 10px;
+    background-color: #f5f5f5;
+  }
+  
+  /* If you want the footer to be fixed at the bottom even when scrolling */
+  /* Add the following instead of the previous .footer CSS */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #f5f5f5;
+  }
+  
